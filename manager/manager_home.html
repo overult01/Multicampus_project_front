@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+
+<meta name="viewport" content="user-scalable=no,width=device-width,initial-scale=1"/>
+
+<style>
+
+	/* body{
+		margin: 0;
+	} */
+
+	.nav-container{
+		display: flex;
+		flex-direction: row;
+		width: 100;
+		margin: 0;
+		padding: 0;
+		/* 목록기호 제거  */
+		list-style-type: none; 
+		/* 상단 위치를 위에 고정 */
+		/* position: fixed; */
+		top: 0; 
+		
+	}
+
+	li {
+		/* 수평네비게이션 바  */
+		display: inline;
+		float: left;
+	}
+
+	a {
+		text-decoration-line : none;
+	}
+</style>
+
+<script
+  src="https://code.jquery.com/jquery-3.6.0.js"
+  integrity="sha256-H+K7U5CnXl1h5ywQfKtSj8PCmoN9aaq30gDh27Xc0jk="
+  crossorigin="anonymous"></script>
+  
+<script type="text/javascript">
+$(document).ready(function() {
+	
+});
+</script>
+  
+<title>관리자 홈</title>
+</head>
+<body>
+	
+	<div id = "main-header">
+		<header>
+			
+			<nav class = "nav-container">
+				<ul>
+					<li><a href = "manager_home.html">관리자 홈</a></li>
+					<li><a href = "manager_product.html">상품 관리</a></li>
+					<li><a href = "manager_notice.html">공지사항 관리</a></li>										
+				</ul>
+			</nav>
+
+		</header>
+	</div>
+
+	<div id = "main-container">		
+		<section>
+			<article>
+				<p>안녕하세요 000님 관리자 페이지입니다.</p>
+			</article>
+		
+		</section>
+	</div>
+	
+	<div id = "main-footer">
+		<footer class = "container">
+			<div></div>
+		</footer>
+	</div>
+
+</body>
+</html>

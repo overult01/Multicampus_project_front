@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+
+<meta name="viewport" content="user-scalable=no,width=device-width,initial-scale=1"/>
+
+<style>
+
+	/* body{
+		margin: 0;
+	} */
+
+	.nav-container{
+		display: flex;
+		flex-direction: row;
+		width: 100;
+		/* 목록기호 제거  */
+		list-style-type: none; 
+		/* 상단 위치를 위에 고정 */
+		/* position: fixed; */
+		top: 0; 
+		
+	}
+
+	li {
+		/* 수평네비게이션 바  */
+		display: inline;
+		float: left;
+	}
+
+	a {
+		text-decoration-line : none;
+	}
+
+</style>
+
+<script
+  src="https://code.jquery.com/jquery-3.6.0.js"
+  integrity="sha256-H+K7U5CnXl1h5ywQfKtSj8PCmoN9aaq30gDh27Xc0jk="
+  crossorigin="anonymous"></script>
+  
+<script type="text/javascript">
+$(document).ready(function() {
+
+	/// 안된다 확인 필요
+	var selectBoxCahnge = function(value){
+		$("#product_date").val(value);
+	if (selectBoxCahnge == "직접입력") {
+		$('option').append("<input type = text placeholer = '등록일 입력'><input type = button value '등록'>")
+		}
+	}
+
+
+});
+</script>
+  
+<title>상품 관리</title>
+</head>
+<body>
+	
+	<div id = "main-header">
+		<header>
+			
+			<nav class = "nav-container">
+				<ul>
+					<li><a href = "manager_home.html">관리자 홈</a></li>
+					<li><a href = "manager_product.html">상품 관리</a></li>
+					<li><a href = "manager_notice.html">공지사항 관리</a></li>										
+				</ul>
+			</nav>
+
+		</header>
+	</div>
+
+	<div id = "main-container">		
+		<section>
+			<article>
+				<div>
+					<h3>상품 리스트</h3>
+					<hr>
+
+					<h1>상품 등록</h1>
+					상품명 <input type="text" name = "product_enroll_input"><br>
+					재고 <input type="text" name = "product_enroll_cnt"><br>
+					등록일 <input type="text" name = "product_enroll_date">
+					<input type = button value = "상품등록"></button>
+				</div>
+
+				<hr>
+
+				<div>
+					<table border="1">
+						<!-- <input type="button" value="품절처리" id = "change_soldout">
+						<input type="button" value="재고변경" id = "change_productcnt">
+						<input type="button" value="등록일변경" id = "change_productdate"> -->
+						<input type="button" value="상품삭제" id = "product_delete">
+						<!-- 새창으로 띄워서 변경 -->
+						<input type="button" value = "상세 내용 변경하기">
+
+						<tr>
+							<td>선택</td>
+							<td>상품번호</td>
+							<td>카테고리</td>
+							<td>상품명</td>
+							<td>재고수량</td>
+							<td>판매상태</td>
+							<td>인기상품 노출</td>
+							
+						</tr>
+						<tr></tr>
+					</table>	
+				</div>
+
+			</article>
+		
+		</section>
+	</div>
+	
+	<div id = "main-footer">
+		<footer class = "container">
+			<div></div>
+		</footer>
+	</div>
+
+</body>
+</html>
