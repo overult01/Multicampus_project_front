@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="user-scalable=no,width=device-width,initial-scale=1"/>
+<title>멀티몰 - 1등 의류몰</title>
+<script src="../js/jquery-3.6.0.min.js"></script>
+<style>
+/* table, td{
+	padding:5px;
+} */
+  table {
+    width: 100%;
+    border-top: 1px solid #444444;
+    border-collapse: collapse;
+  }
+  th, td {
+    border-bottom: 1px solid #444444;
+    border-left: 1px solid #444444;
+    padding: 10px;
+  }
+  th:first-child, td:first-child {
+    border-left: none;
+  }
+input[type=text]{
+	width:100%;
+}
+textarea{
+	width:100%;	
+	resize: none;
+}
+.buttons{
+	margin:20px;
+	text-align: center;
+}
+</style>
+<script>
+$(document).ready( function(){
+
+ $('#send').on('click', function(){
+	// opener.document.getElementById("inquiry_list").innerHTML = "고객문의 내용";
+	 //$('#inquiry_list',opener.document).append("작성한 고객문의 내용 전달");
+	 var inquiry = document.createElement('tr');
+	 var list = document.createElement('td');
+	 var title = document.createElement('td');
+	 var order_num = document.createElement('td');
+	 var context = document.createElement('td');
+	 
+	 list.textContent = $('#list').val();
+	 title.textContent = $('#title').val();
+	 order_num.textContent = $('#order_num').val();
+	 context.textContent = $('#context').val();
+	  
+	 inquiry.appendChild(list);
+	 inquiry.appendChild(title);
+	 inquiry.appendChild(order_num);
+	 inquiry.appendChild(context);
+	 	 
+	 opener.document.getElementById("inquiry_list").appendChild(inquiry);
+	 window.close();
+ });
+ 
+ $('#cancel').on('click', function(){
+	 window.close();
+ });
+	
+});
+</script>
+</head>
+<body>
+	<!-- 페이지 전체 -->
+	<div id="page_wrapper">
+		<!-- 헤더 -->
+		<header id="main_header">
+
+		</header>
+<!-- 본문 -->
+<div id="content">
+	<h1>1:1 문의</h1>
+<section id="main_section">
+<form action="inquire.html">
+<table>
+	<tr>
+		<td><label for=name>이름</label></td>
+		<td><span id=name>김멀티</span></td> <!-- 로그인 정보에서 받아오기 -->
+	</tr>
+	<tr>
+		<td><label for=phone>휴대폰 번호</label></td>
+		<td><span id=phone>010-1111-1111</span></td> <!-- 로그인 정보에서 받아오기 -->
+	</tr>
+	<tr>
+		<td><label for=list>문의 분류</label></td>
+		<td><select id=list>
+				<option>주문 결제</option>
+				<option>배송</option>
+				<option>주문 취소</option>
+				<option>교환/환불</option>
+				<option>상품관련</option>
+			</select></td>
+	</tr>
+	<tr>
+		<td><label for=title>제목</label></td>
+		<td><input id="title" type=text placeholder="문의의 종류를 간략히 적어주세요."></td>
+	</tr>
+	<tr>
+		<td><label for=order_num>주문번호</label></td>
+		<td><input id="order_num" type=text placeholder="주문번호를 입력해주시면 빠른 답변에 도움이됩니다."></td>
+	</tr>
+	<tr>
+		<td><label for=context>문의 내용</label></td>
+		<td><textarea id=context cols=30 rows=20 placeholder="문의하실 내용을 적어주세요."></textarea></td>
+	</tr>
+	<tr>
+		<td>파일 첨부</td><td></td>
+		<!-- 파일 첨부 기능 -->
+	</tr>
+</table>
+<div class=buttons>
+<input type=button id="send" value="문의하기">
+<input type=button id="cancel" value="취소하기">
+</div>
+</form>
+</section>
+</div><!-- content end -->
+</div><!-- page_wrapper end -->
+
+</body>
+</html>

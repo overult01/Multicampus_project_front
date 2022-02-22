@@ -1,0 +1,54 @@
+@charset "UTF-8";
+* {
+	margin: 0;
+	padding: 0;
+}
+
+body {
+	margin: 0 auto;
+	/* width:960px; */
+}
+
+.d-flex {
+	margin-top: 10px;
+	margin-right: 50px;
+	FLOAT: right;
+}
+
+.maintop {
+	margin-top: 50px;
+	margin-left: 100px;
+	margin-bottom: 30px;
+}
+
+.nav-item {
+	margin-top: 10px;
+	margin-right: 10px;
+	font-size: 20px;
+}
+#content {
+	margin-top: 50px;
+	margin-left: 150px;
+	margin-bottom: 30px;
+	width: 85%;
+	height: 92%;
+}
+
+#inquiry table{
+    width: 100%;
+    margin-top: 20px;
+    border-top: 1px solid #444444;
+    border-collapse: collapse;
+}
+#inquiry th, td {
+    border-bottom: 1px solid #444444;
+    border-left: 1px solid #444444;
+    padding: 10px;
+  }
+#inquiry th:first-child, td:first-child {
+	border-left: none;
+    width:10%;
+  }
+ #inquiry td:last-child{
+ 	width:50%;
+ }

@@ -1,0 +1,287 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+   <!-- Required meta tags -->
+    <meta name="viewport" content="user-scalable=no,width=device-width,initial-scale=1"/>
+
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
+<script src="../js/jquery-3.6.0.min.js"></script>
+    <title>멀티몰 - 1등 의류몰</title>
+    <style>
+   *{
+    margin: 0; padding:0;
+    } 
+    
+     body{
+    margin:0 auto;
+   	/* width:960px; */
+    } 
+    
+    .d-flex{
+    margin-top:10px;
+    margin-right:50px;
+    FLOAT: right;
+}
+	.maintop{
+	margin-top:50px;
+	margin-left:100px;
+	margin-bottom: 30px;
+	}
+	
+	.nav-item{
+	margin-top:10px;
+	margin-right:10px;
+	font-size: 20px;
+	}
+	
+#content {
+	margin-top: 50px;
+	margin-left: 150px;
+	margin-bottom: 30px;
+	width: 85%;
+	height: 92%;
+}
+table{
+	width:100%;
+	margin: 10px;
+	table-layout:fixed; /*테이블 셀 크기 조절*/
+}
+table, th, td{
+	padding:10px;
+}
+#user_info table td:first-child, #recipient_info table td:first-child{
+	width:15%;
+}
+
+#order_info table th, #order_info table td{
+	border: 1px solid navy;
+}
+#order_info table th{
+	text-align: center;
+}
+#order_info table td:nth-child(2), #order_info table th:nth-child(2){
+	width:50%;
+}
+#pay_info table th, #pay_info table td{
+	border: 1px solid navy;
+	text-align: center;
+}
+
+#order_pay{
+	width:10px;
+	margin:50px auto;
+}
+    </style>
+<script>
+	$(document).ready(function() {
+
+	});
+</script>
+</head>
+<body>
+	<!-- 페이지 전체 -->
+	<div id="page_wrapper">
+		<!-- 헤더 -->
+		<header id="main_header">
+			<div class="maintop">
+				<A href="http://localhost:8080/html/multimall/multimall.html"><IMG
+					src="../images/mblack.png" width=240; height=60;></A>
+
+				<div class="d-flex">
+					<!-- 검색 -->
+					<input class="form-control me-sm-2" type="text"
+						placeholder="오늘의 아우터"
+						style="width: 300px; height: 50px; font-size: 20px;">
+					<button class="btn btn-secondary my-2 my-sm-0" type="submit"
+						style="float: right;">Search</button>
+				</div>
+			</div>
+		</header>
+		<!-- 내비게이션 -->
+		<nav class="navbar navbar-expand-lg navbar-light bg-light">
+			<div class="container-fluid">
+				<a class="navbar-brand" href="#"></a>
+				<button class="navbar-toggler" type="button"
+					data-bs-toggle="collapse" data-bs-target="#navbarColor03"
+					aria-controls="navbarColor03" aria-expanded="false"
+					aria-label="Toggle navigation">
+					<span class="navbar-toggler-icon"></span>
+				</button>
+
+				<ul class="navbar-nav justify-content-center" style="width: 100%">
+					<li class="nav-item"><a class="nav-link" href="#">&nbsp;홈&nbsp;
+					</a></li>
+					<li class="nav-item"><a class="nav-link" href="#">&nbsp;상의&nbsp;</a>
+					</li>
+					<li class="nav-item"><a class="nav-link" href="#">&nbsp;하의&nbsp;</a>
+					</li>
+					<li class="nav-item"><a class="nav-link" href="#">&nbsp;아우터&nbsp;</a>
+					</li>
+					<li class="nav-item"><a class="nav-link" href="#">&nbsp;장바구니&nbsp;</a>
+					</li>
+					<li class="nav-item"><a class="nav-link" href="#">&nbsp;고객센터&nbsp;</a>
+					</li>
+				</ul>
+			</div>
+		</nav>
+		<!-- 본문 -->
+		<div id="content">
+				<section id="main_section">
+				<h1>주문하기</h1>
+				<hr>
+				<br>
+				<div id=user_info>
+				<h4 style="display:inline"><b>주문자 정보</b></h4>
+				<span style="color: red; float:right">필수입력 ＊</span>
+				<hr>
+					<table>
+						<tr>
+							<td>주문자 이름</td>
+							<td>주문하는 사람 이름 (로그인 정보 받아오기)	</td>
+						</tr>
+						<tr>
+							<td>연락처</td>
+							<td>주문하는 사람 연락처 (로그인 정보 받아오기)</td>
+						</tr>
+						<tr>
+							<td>주소</td>
+							<td>주문하는 사람 주소 (로그인 정보 받아오기)</td>
+						</tr>
+					</table>
+				</div>
+				<br><br>
+				<div id=recipient_info>
+				<h4 style="display:inline"><b>배송 정보</b></h4>
+				<span style="float: right"><input type=checkbox id=info_same name=info> 주문자와 동일합니다. <span style="color: red">필수입력 ＊</span>
+				</span>
+				<hr>
+					<table>
+						<tr>
+							<td><label for=recipient>받으시는 분 이름</label></td>
+							<td><input id="recipient" type=text></td>
+						</tr>
+						<tr>
+							<td><label for=phone>연락처</label></td>
+							<td><input id=phone type="tel"></td>
+						</tr>
+						<tr>
+							<td><label for=address_detail>주소</label></td>
+							<td><input id="postcode" type=text disabled="disabled"> <input id=address_search type=button value="우편번호 찾기"><br>
+								<input id="address" type=text disabled="disabled"><br>
+								<input id="address_detail" type=text size=50 placeholder="상세 주소를 입력해 주세요.">
+							</td>
+						</tr>
+						<tr>
+							<td><label for=memo>배송시 요청사항</label></td>
+							<td><textarea id="memo" cols="50" rows="6" maxlength="5" style="resize:none" placeholder="택배 기사님께 전달하는 내용입니다.(50자 이내로 입력하세요)"></textarea></td>
+						</tr>
+					</table>
+				</div>
+				<hr>
+				<br>
+				<br>
+				<div id=order_info>
+				<h4><b>상품 정보</b></h4>
+				<table >
+						<tr>
+							<th><input type="checkbox" name=product value=all></th><th>상품정보</th><th>수량</th><th>주문금액</th>
+						</tr>
+						<tr>
+							<td><input type="checkbox" name=product value=product1></td><td>상품정보1</td><td>수량</td><td>주문금액</td>
+						</tr>
+						<tr>
+							<td><input type="checkbox" name=product value=product2><td>상품정보2</td><td>수량</td><td>주문금액</td>
+						</tr>
+				</table>
+				</div>
+				<div id=pay_info>
+				<table>
+					<tr><th>총 주문 금액</th><th>배송료</th><th>결제 예정 금액</th><tr>
+					<tr>
+					<td><span id=product_pay></span>원</td>
+					<td><span id=delivery></span>원</td>
+					<td><span id=total_pay></span>원</td>
+					</tr>
+				</table>
+				<div id=order_pay><input id=pay type=button value="결제하기"></div>
+				</div>
+			</section>
+		</div>
+		<!-- content end -->
+		<footer class="bd-footer py-5 mt-5 bg-light">
+			<div class="container py-5">
+				<div class="row">
+					<div class="col-lg-3 mb-3">
+						<a
+							class="d-inline-flex align-items-center mb-2 link-dark text-decoration-none"
+							href="/" aria-label="Bootstrap"> <span class="fs-5"><B>멀티몰</B></span>
+						</a>
+						<ul class="list-unstyled small text-muted">
+							<li class="mb-2">메인 페이지 만드는데 죽을 것 같습니다 흑흑</li>
+							<li class="mb-2">살려주세요 저는 아무 잘못도 안했어요 ㅠㅠ</li>
+							<li class="mb-2">멀티캠퍼스 브라우니 감사합니다 잘 먹고 있워용</li>
+						</ul>
+					</div>
+					<div class="col-6 col-lg-2 offset-lg-1 mb-3">
+						<h5>Links</h5>
+						<ul class="list-unstyled">
+							<li class="mb-2"><a href="/">Home</a></li>
+							<li class="mb-2"><a
+								href="/docs/{{ .Site.Params.docs_version }}/">Docs</a></li>
+							<li class="mb-2"><a
+								href="/docs/{{ .Site.Params.docs_version }}/examples/">Examples</a></li>
+							<li class="mb-2"><a href="{{ .Site.Params.themes }}">Themes</a></li>
+							<li class="mb-2"><a href="{{ .Site.Params.blog }}">Blog</a></li>
+						</ul>
+					</div>
+					<div class="col-6 col-lg-2 mb-3">
+						<h5>Guides</h5>
+						<ul class="list-unstyled">
+							<li class="mb-2"><a
+								href="/docs/{{ .Site.Params.docs_version }}/getting-started/">Getting
+									started</a></li>
+							<li class="mb-2"><a
+								href="/docs/{{ .Site.Params.docs_version }}/examples/starter-template/">Starter
+									template</a></li>
+							<li class="mb-2"><a
+								href="/docs/{{ .Site.Params.docs_version }}/getting-started/webpack/">Webpack</a></li>
+							<li class="mb-2"><a
+								href="/docs/{{ .Site.Params.docs_version }}/getting-started/parcel/">Parcel</a></li>
+						</ul>
+					</div>
+					<div class="col-6 col-lg-2 mb-3">
+						<h5>Projects</h5>
+						<ul class="list-unstyled">
+							<li class="mb-2"><a
+								href="{{ .Site.Params.github_org }}/bootstrap">Bootstrap 5</a></li>
+							<li class="mb-2"><a
+								href="{{ .Site.Params.github_org }}/bootstrap/tree/v4-dev">Bootstrap
+									4</a></li>
+							<li class="mb-2"><a
+								href="{{ .Site.Params.github_org }}/icons">Icons</a></li>
+							<li class="mb-2"><a href="{{ .Site.Params.github_org }}/rfs">RFS</a></li>
+							<li class="mb-2"><a
+								href="{{ .Site.Params.github_org }}/bootstrap-npm-starter">npm
+									starter</a></li>
+						</ul>
+					</div>
+					<div class="col-6 col-lg-2 mb-3">
+						<h5>N조 구성</h5>
+						<ul class="list-unstyled">
+							<li class="mb-2">메인페이지_최은택</li>
+							<li class="mb-2">~~~~~~~</li>
+							<li class="mb-2">12312321321</li>
+							<li class="mb-2">ㅁㅁㅁㅁㅁㅁㅁㅁㅁㅁㅁㅁ</li>
+							<li class="mb-2">!!!!!!!!!!!!!!!!!!!</li>
+							<li class="mb-2">............</li>
+						</ul>
+					</div>
+				</div>
+			</div>
+		</footer>
+	</div>
+	<!-- page_wrapper end -->
+</body>
+</html>
