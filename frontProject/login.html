@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+
+<meta name="viewport"
+	content="user-scalable=no,width=device-width,initial-scale=1">
+
+<script
+      src="https://code.jquery.com/jquery-3.6.0.js"
+      integrity="sha256-H+K7U5CnXl1h5ywQfKtSj8PCmoN9aaq30gDh27Xc0jk="
+      crossorigin="anonymous"></script>
+
+<style>
+    *{
+        text-align: center;
+    }
+
+    p{
+        width: 5vw;
+        display: inline-block;
+        text-align: left;
+    }
+
+
+</style>
+
+<title>로그인 폼</title>
+
+</head>
+<body>
+
+<h1>로그인</h1>
+<hr>
+    <form action="#">
+        <div class="login_class">
+            <p>아이디</p><input type="text" id ="user_id">
+        </div>
+        <div>                 
+            <p>비밀번호</p><input type="password">
+        </div>
+        
+        <div class="btn">
+            <input type="button" value="로그인" id = "login_btn">&nbsp;
+            <input type="button" value="취소">
+        </div>
+    </form>
+</body>
+</html>
+
+<script>
+    window.onload = function(){
+        document.getElementById("login_btn").onclick = function(){
+            var user_id = document.getElementById("user_id").value;
+            if(user_id === ''){
+                alert("아이디를 입력해주세요");
+            }
+            
+        }
+    }
+</script>

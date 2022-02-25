@@ -1,0 +1,21 @@
+th, td{
+    /* /* text-align: center; */ */
+}
+
+#close_btn{
+    align-self: flex-end;
+    margin-left: 300px;
+}
+
+#main-container {
+	margin-top: 50px;
+	margin-left: 150px;
+	margin-bottom: 30px;
+	width: 85%;
+	height: 92%;
+}
+
+
+
+
+
